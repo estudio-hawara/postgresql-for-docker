@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  postgresql:
+    build:
+      context: docker
+    environment:
+      - POSTGRES_PASSWORD
+    networks:
+      - database
+      - traefik
+    restart: always
+    volumes:
+      - postgresql:/var/lib/postgresql
+
+networks:
+  database:
+    name: "database"
+    external: false
+  traefik:
+    external: true
+
+volumes:
+  postgresql:

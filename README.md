@@ -80,6 +80,14 @@ To drop an existing user with it's related database, there is a `drop-bundle.sh`
 ./dc exec postgresql drop-bundle.sh cowork
 ```
 
+### Create an Administrator
+
+To create a new user with privileges to create databases, there is a `create-admin.sh`script:
+
+```bash
+./dc exec postgresql create-admin.sh odoo
+```
+
 ### Backup the Databases
 
 To run backups for all the databases, you can use the bundled `dump-database.sh` script:

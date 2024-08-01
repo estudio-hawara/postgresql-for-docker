@@ -66,30 +66,30 @@ Thanks to this, and after giving executing permissions to the new file, you will
 
 ### Create a Database
 
-To create a new user with it's related database, there is a `create.sh` script:
+To create a new user with it's related database, there is a `create-bundle.sh` script:
 
 ```bash
-./dc exec postgresql create.sh cowork
+./dc exec postgresql create-bundle.sh cowork
 ```
 
 ### Drop a Database
 
-To drop an existing user with it's related database, there is a `drop.sh` script:
+To drop an existing user with it's related database, there is a `drop-bundle.sh` script:
 
 ```bash
-./dc exec postgresql drop.sh cowork
+./dc exec postgresql drop-bundle.sh cowork
 ```
 
 ### Backup the Databases
 
-To run backups for all the databases, you can use the bundled `dump.sh` script:
+To run backups for all the databases, you can use the bundled `dump-database.sh` script:
 
 ```bash
-./dc exec postgresql dump.sh
+./dc exec postgresql dump-database.sh
 ```
 
 Alternatively, you can specify the database to dump:
 
 ```bash
-./dc exec postgresql dump.sh cowork > backups/cowork`date +%F\T%T\Z`.sql
+./dc exec postgresql dump-database.sh cowork > backups/cowork`date +%F\T%T\Z`.sql
 ```

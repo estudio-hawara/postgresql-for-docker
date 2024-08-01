@@ -8,7 +8,7 @@ DATABASE=$1
 if [ -z "$DATABASE" ]
 then
     echo "The database name is missing. Try again:"
-    echo "> drop.sh <database>"
+    echo "> drop-bundle.sh <database>"
     exit 1
 fi
 

@@ -8,7 +8,7 @@ DATABASE=$1
 if [ -z "$DATABASE" ]
 then
     echo "The database name is missing. Try again:"
-    echo "> create.sh <database>"
+    echo "> create-bundle.sh <database>"
     exit 1
 fi
 

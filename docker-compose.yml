@@ -10,6 +10,7 @@ services:
     restart: always
     volumes:
       - postgresql:/var/lib/postgresql
+      - ./backups:/var/backups
 
 networks:
   database:

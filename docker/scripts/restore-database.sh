@@ -5,11 +5,12 @@ DATABASE=$1
 if [ -z "$DATABASE" ]
 then
     echo "The database name is missing. Try again:"
-    echo "> dump-database.sh <database>"
+    echo "> restore-database.sh <database>"
     exit 1
 fi
 
 pushd /var/backups
-    pg_dump --user postgres $DATABASE > $DATABASE.sql
+    gzip -d $DATABASE.sql.gz
+    psql --user postgres -f $DATABASE.sql
     gzip $DATABASE.sql
 popd

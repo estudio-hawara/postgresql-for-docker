@@ -90,14 +90,20 @@ To create a new user with privileges to create databases, there is a `create-adm
 
 ### Backup the Databases
 
-To run backups for all the databases, you can use the bundled `dump-database.sh` script:
+To create a backup for one the databases, you can use the bundled `dump-database.sh` script:
 
 ```bash
-./dc exec postgresql dump-database.sh
+./dc exec postgresql dump-database.sh cowork
 ```
 
-Alternatively, you can specify the database to dump:
+That will create a `cowork.sql.gz` file in the `backups` folder.
+
+### Restore a Backup
+
+To restore a backup, you can use the `restore-database.sh` script:
 
 ```bash
-./dc exec postgresql dump-database.sh cowork > backups/cowork`date +%F\T%T\Z`.sql
+./dc exec postgresql restore-database.sh cowork
 ```
+
+The script will look for the corresponding `.sql.gz` file in the `backups` folder and it will restore it's backup state.

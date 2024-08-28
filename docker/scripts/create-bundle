@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Halt on error
+set -e
+
+DATABASE=$1
+
+if [ -z "$DATABASE" ]
+then
+    echo "The database name is missing. Try again:"
+    echo "> create-bundle <database>"
+    exit 1
+fi
+
+USER=$DATABASE
+
+create-user $USER
+create-database $DATABASE
+
+psql -q -v ON_ERROR_STOP=1 --username postgres <<-EOSQL
+	GRANT ALL PRIVILEGES ON DATABASE $DATABASE TO $USER;
+EOSQL
+
+echo "The database $DATABASE was linked with the user $USER." \
+ | grep --color "^\|$DATABASE\|$USER"

@@ -9,5 +9,6 @@ RUN chmod +x /usr/local/bin/drop-bundle
 RUN chmod +x /usr/local/bin/drop-database
 RUN chmod +x /usr/local/bin/drop-user
 RUN chmod +x /usr/local/bin/dump-database
+RUN chmod +x /usr/local/bin/link-database-and-user
 RUN chmod +x /usr/local/bin/restore-database
 RUN chmod +x /usr/local/bin/set-admin

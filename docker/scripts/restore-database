@@ -9,6 +9,9 @@ then
     exit 1
 fi
 
+drop-database $DATABASE
+create-database $DATABASE
+
 pushd /var/backups
     gzip -d $DATABASE.sql.gz
     psql --user postgres --dbname=$DATABASE --file=$DATABASE.sql

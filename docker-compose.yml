@@ -5,7 +5,7 @@ services:
     environment:
       - POSTGRES_PASSWORD
     networks:
-      - database
+      - postgresql
       - traefik
     restart: always
     volumes:
@@ -13,8 +13,7 @@ services:
       - ./backups:/var/backups
 
 networks:
-  database:
-    name: postgresql
+  postgresql:
     external: false
   traefik:
     external: true

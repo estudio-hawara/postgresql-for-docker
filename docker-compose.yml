@@ -9,13 +9,13 @@ services:
       - traefik
     restart: always
     volumes:
-      - postgresql:/var/lib/postgresql
+      - postgresql:/var/lib/postgresql/data
       - ./backups:/var/backups
 
 networks:
   database:
-    name: "database"
-    external: ${EXTERNAL_NETWORK_DATABASE}
+    name: postgresql
+    external: false
   traefik:
     external: true
 

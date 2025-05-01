@@ -13,6 +13,8 @@ then
 fi
 
 psql -q -v ON_ERROR_STOP=1 --username postgres <<-EOSQL
+    \c $USER;
+    GRANT ALL ON SCHEMA public TO $USER;
 	ALTER USER $USER CREATEDB;
 EOSQL
 

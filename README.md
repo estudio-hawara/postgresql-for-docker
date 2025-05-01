@@ -5,7 +5,7 @@
 To start using this container, start by cloning the repository:
 
 ```bash
-git clone https://github.com/hawara-es/postgresql-for-docker.git
+git clone https://github.com/estudio-hawara/postgresql-for-docker.git
 cd postgresql-for-docker
 ```
 

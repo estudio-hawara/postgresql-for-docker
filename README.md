@@ -114,7 +114,7 @@ To drop an existing user with it's related database, use the `drop-bundle` scrip
 If you only want to drop the database but you don't want to drop any user linked to it, use the `drop-database` script:
 
 ```bash
-./dc exec postgresql drop-bundle odoo
+./dc exec postgresql drop-database odoo
 
 #> The database odoo was dropped.
 ```
